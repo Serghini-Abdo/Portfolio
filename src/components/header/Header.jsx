@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="header">
        <nav className="nav container">
-        <a href="index.html" className="nav__logo">Serghni.</a>
+        <a href="index.html" className="nav__logo">Serghni <b style={{color:'#FFDD67',fontSize:'var(--h1-font-size)'}}>.</b></a>
         <div className={Toggle?"nav__menu show-menu":"nav__menu"}>
             <ul className="nav__list grid">
                 
