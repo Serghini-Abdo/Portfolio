@@ -6,7 +6,7 @@ const Social = () => {
         <a href="https://www.linkedin.com/in/abdelmoula-serghini/" className="home__social-icon" target='_blank'>
             <i class='bx bxl-linkedin'></i>
         </a>
-        <a href="https://portfolio-rose-seven-71.vercel.app" className="home__social-icon" target='_blank'>
+        <a href="https://serghini-abdo.vercel.app/" className="home__social-icon" target='_blank'>
             <i className="uil uil-dribbble"></i>
         </a>
         <a href="https://github.com/Serghini-Abdo/" className="home__social-icon" target='_blank'>
