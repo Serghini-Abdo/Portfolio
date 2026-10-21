@@ -37,7 +37,7 @@ const Contact = () => {
 
     const subject = encodeURIComponent(form.get("subject"));
     const message = encodeURIComponent(
-      `From: ${form.get("name")} (${form.get("email"})\n\n${form.get("message")}`
+      "From: " + form.get("name") + " (" + form.get("email") + ")\\n\\n" + form.get("message")
     );
     window.location.href = `mailto:${email}?subject=${subject}&body=${message}`;
   };
