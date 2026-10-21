@@ -18,9 +18,9 @@ const Frontend = () => {
 
       <div className="skills__box">
         <div className="skills__group">
-          {firstHalf.map((item, i) => {
+          {firstHalf.map((item) => {
             return (
-              <div className="skills__data">
+              <div className="skills__data" key={item.skill}>
                 <i className="bx bx-badge-check"></i>
                 <div>
                   <h3 className="skills__name">{item.skill}</h3>
@@ -31,9 +31,9 @@ const Frontend = () => {
           })}
         </div>
         <div className="skills__group">
-          {secondHalf.map((item, i) => {
+          {secondHalf.map((item) => {
             return (
-              <div className="skills__data">
+              <div className="skills__data" key={item.skill}>
                 <i className="bx bx-badge-check"></i>
                 <div>
                   <h3 className="skills__name">{item.skill}</h3>

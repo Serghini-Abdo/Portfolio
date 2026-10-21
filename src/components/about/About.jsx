@@ -11,12 +11,12 @@ const About = () => {
       <span className="section__subtitle">My introduction</span>
 
       <div className="about__container container grid">
-        <img src={AboutImg} alt="" className="about__img" />
+        <img src={AboutImg} alt="Serghini Abdelmoula" className="about__img" />
 
         <div className="about__data">
           <Info />
 
-          <p className="anout__description">
+          <p className="about__description">
             Enthusiastic Full Stack Developer specialized in React and Laravel.
             Strong skills in frontend and backend development, as well as in
             solving complex problems. Committed to continuous learning and
@@ -26,7 +26,7 @@ const About = () => {
           <a download="" href={CV} className="button button--flex">
             Download CV
             <svg
-              class="button__icon"
+              className="button__icon"
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
