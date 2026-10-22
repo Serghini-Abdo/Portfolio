@@ -57,7 +57,7 @@
         bottom: 0;
     }
     .nav {
-        height: var(--header-height);
+        height: 4rem;
     }
 
     .nav__menu {
@@ -79,12 +79,19 @@
     .nav__list {
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        gap: 2rem;
+        gap: 1rem;
 
     }
 
     .nav__icon {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+    }
+
+    .nav__link {
+        font-size: var(--smaller-font-size);
+        min-height: 3.25rem;
+        justify-content: center;
+        row-gap: 0.2rem;
     }
 
     .nav__close {
