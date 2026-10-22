@@ -1,30 +1,7 @@
 import React from "react";
 import "./portfolio.css";
 import SectionHeading from "../../components/ui/SectionHeading";
-
-const projects = [
-  {
-    title: "Portfolio Website",
-    description:
-      "A responsive personal website presenting my experience, skills, and selected work.",
-    technologies: "React · CSS · Vercel",
-    link: "https://github.com/Serghini-Abdo/Portfolio",
-  },
-  {
-    title: "Frontend Applications",
-    description:
-      "Clean interfaces focused on responsive layouts, reusable components, and accessible interactions.",
-    technologies: "React · JavaScript · Bootstrap",
-    link: "https://github.com/Serghini-Abdo",
-  },
-  {
-    title: "Full Stack Solutions",
-    description:
-      "Web applications that connect practical user experiences with maintainable backend services.",
-    technologies: "Laravel · PHP · MySQL",
-    link: "https://github.com/Serghini-Abdo",
-  },
-];
+import projects from "../../data/projects";
 
 const Portfolio = () => {
   return (
@@ -41,12 +18,7 @@ const Portfolio = () => {
               <h3 className="portfolio__title">{project.title}</h3>
               <p className="portfolio__description">{project.description}</p>
               <span className="portfolio__technologies">{project.technologies}</span>
-              <a
-                className="portfolio__link"
-                href={project.link}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a className="portfolio__link" href={project.link} target="_blank" rel="noreferrer">
                 View project <i className="uil uil-arrow-up-right"></i>
               </a>
             </div>
