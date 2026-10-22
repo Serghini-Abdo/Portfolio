@@ -1,4 +1,25 @@
-# Getting Started with Create React App
+# Serghini Portfolio
+
+## Local development
+
+Install Node.js, then run:
+
+```bash
+npm install
+npm start
+```
+
+Copy `.env.example` to `.env.local` and set `REACT_APP_CONTACT_EMAIL` if you want the contact form to work locally.
+
+Before pushing to `stg`, run the full local check:
+
+```bash
+npm run validate
+```
+
+This runs the test suite once and then creates a production build.
+
+## Available scripts
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
