@@ -21,9 +21,11 @@ const Portfolio = () => {
               <h3 className="portfolio__title">{t(project.titleKey)}</h3>
               <p className="portfolio__description">{t(project.descriptionKey)}</p>
               <span className="portfolio__technologies">{project.technologies}</span>
-              <a className="portfolio__link" href={project.link} target="_blank" rel="noreferrer">
-                {t("portfolio.viewProject")} <i className="uil uil-arrow-up-right"></i>
-              </a>
+              {project.link && (
+                <a className="portfolio__link" href={project.link} target="_blank" rel="noreferrer">
+                  {t("portfolio.viewProject")} <i className="uil uil-arrow-up-right"></i>
+                </a>
+              )}
             </div>
           </article>
         ))}
