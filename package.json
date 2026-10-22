@@ -11,10 +11,10 @@
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "latest",
-    "vite": "latest",
-    "vitest": "latest",
-    "jsdom": "latest"
+    "@vitejs/plugin-react": "6.1.2",
+    "vite": "8.3.4",
+    "vitest": "5.0.5",
+    "jsdom": "30.1.3"
   },
   "scripts": {
     "dev": "vite",
