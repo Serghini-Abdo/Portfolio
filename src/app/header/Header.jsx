@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import "./header.css"
 import { useLocale } from "../LocaleContext";
+import LanguageSelect from "../../components/ui/LanguageSelect";
 
 const Header = () => {
     // toggle menu
     const [Toggle,showMenu] = useState(false);
-    const { locale, setLocale, t } = useLocale();
+    const { t } = useLocale();
   return (
     <header className="header">
        <nav className="nav container">
@@ -54,18 +55,7 @@ const Header = () => {
         <div className="nav__toggle" onClick={()=>showMenu(!Toggle)}>
             <i className="uil uil-apps"></i>
         </div>
-        <label className="nav__language">
-            <i className="uil uil-globe nav__language-icon" aria-hidden="true"></i>
-            <select
-                className="nav__language-select"
-                value={locale}
-                onChange={(event) => setLocale(event.target.value)}
-                aria-label="Language"
-            >
-                <option value="en">English</option>
-                <option value="fr">Français</option>
-            </select>
-        </label>
+        <LanguageSelect />
 
         </nav> 
     </header>
