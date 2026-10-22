@@ -9,10 +9,18 @@
 
 .nav {
     height: calc(var(--header-height) + 1.5rem);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
     align-items: center;
     column-gap: 1rem;
+}
+
+.nav__logo {
+    justify-self: start;
+}
+
+.nav__menu {
+    grid-column: 2;
 }
 
 .nav__logo,
@@ -23,9 +31,24 @@
 }
 
 .nav__language {
-    padding: 0.35rem 0.5rem;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--title-color);
+}
+
+.nav__language-icon {
+    font-size: 1rem;
+}
+
+.nav__language-select {
+    padding: 0.2rem 0.1rem;
+    color: var(--title-color);
     background: transparent;
+    border: 0;
     font-size: var(--small-font-size);
+    cursor: pointer;
 }
 
 .nav__list {
@@ -65,6 +88,8 @@
     }
     .nav {
         height: 4rem;
+        display: flex;
+        justify-content: space-between;
     }
 
     .nav__menu {
@@ -122,6 +147,10 @@
         height: 2.75rem;
         place-items: center;
         font-size: 1.6rem;
+    }
+
+    .nav__language {
+        justify-self: auto;
     }
 
     .nav__icon,

@@ -15,6 +15,7 @@ export const LocaleProvider = ({ children }) => {
 
   const value = useMemo(() => ({
     locale,
+    setLocale,
     toggleLocale: () => setLocale((current) => (current === "en" ? "fr" : "en")),
     t: (key) => key.split(".").reduce((value, part) => value?.[part], dictionaries[locale]) || key,
   }), [locale]);

@@ -5,7 +5,7 @@ import { useLocale } from "../LocaleContext";
 const Header = () => {
     // toggle menu
     const [Toggle,showMenu] = useState(false);
-    const { locale, toggleLocale, t } = useLocale();
+    const { locale, setLocale, t } = useLocale();
   return (
     <header className="header">
        <nav className="nav container">
@@ -54,9 +54,18 @@ const Header = () => {
         <div className="nav__toggle" onClick={()=>showMenu(!Toggle)}>
             <i className="uil uil-apps"></i>
         </div>
-        <button className="nav__language" type="button" onClick={toggleLocale} aria-label={t("language.switchTo")}>
-            {locale.toUpperCase()}
-        </button>
+        <label className="nav__language">
+            <i className="uil uil-globe nav__language-icon" aria-hidden="true"></i>
+            <select
+                className="nav__language-select"
+                value={locale}
+                onChange={(event) => setLocale(event.target.value)}
+                aria-label="Language"
+            >
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+            </select>
+        </label>
 
         </nav> 
     </header>

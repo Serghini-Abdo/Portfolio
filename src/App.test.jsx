@@ -22,8 +22,10 @@ test("shows inline contact errors for an empty form", () => {
 test("switches between English and French", () => {
   render(<App />);
 
-  fireEvent.click(screen.getByRole("button", { name: "Français" }));
+  fireEvent.change(screen.getByRole("combobox", { name: "Language" }), {
+    target: { value: "fr" },
+  });
 
   expect(screen.getByRole("heading", { name: /à propos de moi/i })).toBeInTheDocument();
-  expect(screen.getByRole("button", { name: "English" })).toBeInTheDocument();
+  expect(screen.getByRole("combobox", { name: "Language" })).toHaveValue("fr");
 });
