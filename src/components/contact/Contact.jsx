@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./contact.css";
 
 const contactLinks = [
@@ -24,19 +24,47 @@ const contactLinks = [
 
 const Contact = () => {
   const [status, setStatus] = useState("");
+  const [errors, setErrors] = useState({});
+
+  useEffect(() => {
+    if (!status || status === "Sending message...") {
+      return undefined;
+    }
+
+    const timeout = setTimeout(() => setStatus(""), 4000);
+    return () => clearTimeout(timeout);
+  }, [status]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const formElement = event.currentTarget;
+    const values = Object.fromEntries(form.entries());
+    const nextErrors = {};
 
+    if (!values.name.trim()) nextErrors.name = "Name is required.";
+    if (!values.email.trim()) {
+      nextErrors.email = "Email is required.";
+    } else if (!/^\S+@\S+\.\S+$/.test(values.email)) {
+      nextErrors.email = "Enter a valid email address.";
+    }
+    if (!values.subject.trim()) nextErrors.subject = "Subject is required.";
+    if (!values.message.trim()) nextErrors.message = "Message is required.";
+
+    if (Object.keys(nextErrors).length > 0) {
+      setErrors(nextErrors);
+      setStatus("");
+      return;
+    }
+
+    setErrors({});
     setStatus("Sending message...");
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(form.entries())),
+        body: JSON.stringify(values),
       });
 
       if (!response.ok) {
@@ -75,27 +103,43 @@ const Contact = () => {
           ))}
         </div>
 
-        <form className="contact__form" id="contact-form" onSubmit={handleSubmit}>
+        <form className="contact__form" id="contact-form" noValidate onSubmit={handleSubmit}>
           <div className="contact__form-group">
-            <label htmlFor="contact-name">Name</label>
-            <input id="contact-name" name="name" type="text" required />
+            <label className={errors.name ? "contact__field-error" : ""} htmlFor="contact-name">Name</label>
+            <input className={errors.name ? "contact__field-error" : ""} id="contact-name" name="name" type="text" aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "contact-name-error" : undefined} />
+            {errors.name && <span className="contact__error" id="contact-name-error">{errors.name}</span>}
           </div>
           <div className="contact__form-group">
-            <label htmlFor="contact-email">Email</label>
-            <input id="contact-email" name="email" type="email" required />
+            <label className={errors.email ? "contact__field-error" : ""} htmlFor="contact-email">Email</label>
+            <input className={errors.email ? "contact__field-error" : ""} id="contact-email" name="email" type="email" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "contact-email-error" : undefined} />
+            {errors.email && <span className="contact__error" id="contact-email-error">{errors.email}</span>}
           </div>
           <div className="contact__form-group">
-            <label htmlFor="contact-subject">Subject</label>
-            <input id="contact-subject" name="subject" type="text" required />
+            <label className={errors.subject ? "contact__field-error" : ""} htmlFor="contact-subject">Subject</label>
+            <input className={errors.subject ? "contact__field-error" : ""} id="contact-subject" name="subject" type="text" aria-invalid={Boolean(errors.subject)} aria-describedby={errors.subject ? "contact-subject-error" : undefined} />
+            {errors.subject && <span className="contact__error" id="contact-subject-error">{errors.subject}</span>}
           </div>
           <div className="contact__form-group">
-            <label htmlFor="contact-message">Message</label>
-            <textarea id="contact-message" name="message" rows="6" required />
+            <label className={errors.message ? "contact__field-error" : ""} htmlFor="contact-message">Message</label>
+            <textarea className={errors.message ? "contact__field-error" : ""} id="contact-message" name="message" rows="6" aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? "contact-message-error" : undefined} />
+            {errors.message && <span className="contact__error" id="contact-message-error">{errors.message}</span>}
           </div>
           <button className="button button--flex" type="submit">
             Send message <i className="uil uil-message button__icon" aria-hidden="true"></i>
           </button>
-          {status && <p className="contact__status" role="status">{status}</p>}
+          {status && (
+            <div className="contact__status contact__status--toast" role="status">
+              <span>{status}</span>
+              <button
+                className="contact__status-close"
+                type="button"
+                aria-label="Close notification"
+                onClick={() => setStatus("")}
+              >
+                ×
+              </button>
+            </div>
+          )}
         </form>
       </div>
     </section>
