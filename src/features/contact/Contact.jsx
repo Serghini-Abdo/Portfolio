@@ -3,6 +3,7 @@ import "./contact.css";
 import Button from "../../components/ui/Button";
 import SectionHeading from "../../components/ui/SectionHeading";
 import contactLinks from "../../data/contactLinks";
+import { sendContactMessage } from "../../services/contactApi";
 
 const Contact = () => {
   const [status, setStatus] = useState("");
@@ -43,16 +44,7 @@ const Contact = () => {
     setStatus("Sending message...");
 
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-
-      if (!response.ok) {
-        throw new Error("Unable to send message");
-      }
-
+      await sendContactMessage(values);
       formElement.reset();
       setStatus("Message sent successfully.");
     } catch (error) {
