@@ -1,7 +1,3 @@
-.portfolio__container {
-  grid-template-columns: repeat(3, 1fr);
-}
-
 .portfolio__card {
   overflow: hidden;
   background-color: var(--container-color);
@@ -51,10 +47,4 @@
 
 .portfolio__link:hover {
   color: var(--title-color-dark);
-}
-
-@media screen and (max-width: 768px) {
-  .portfolio__container {
-    grid-template-columns: 1fr;
-  }
 }

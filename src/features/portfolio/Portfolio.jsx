@@ -1,6 +1,7 @@
 import React from "react";
 import "./portfolio.css";
 import SectionHeading from "../../components/ui/SectionHeading";
+import CardGrid from "../../components/ui/CardGrid";
 import projects from "../../data/projects";
 import { useLocale } from "../../app/LocaleContext";
 
@@ -10,7 +11,7 @@ const Portfolio = () => {
     <section className="portfolio section" id="portfolio">
       <SectionHeading title={t("portfolio.title")} subtitle={t("portfolio.subtitle")} />
 
-      <div className="portfolio__container container grid">
+      <CardGrid className="portfolio__container container">
         {projects.map((project) => (
           <article className="portfolio__card" key={project.titleKey}>
             <div className="portfolio__preview" aria-hidden="true">
@@ -26,7 +27,7 @@ const Portfolio = () => {
             </div>
           </article>
         ))}
-      </div>
+      </CardGrid>
     </section>
   );
 };

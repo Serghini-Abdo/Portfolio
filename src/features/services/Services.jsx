@@ -1,6 +1,7 @@
 import React from "react";
 import "./services.css";
 import SectionHeading from "../../components/ui/SectionHeading";
+import CardGrid from "../../components/ui/CardGrid";
 import services from "../../data/services";
 import { useLocale } from "../../app/LocaleContext";
 
@@ -10,7 +11,7 @@ const Services = () => {
   <section className="services section" id="services">
     <SectionHeading title={t("services.title")} subtitle={t("services.subtitle")} />
 
-    <div className="services__container container grid">
+    <CardGrid className="services__container container">
       {services.map((service) => (
         <article className="services__content" key={service.titleKey}>
           <i className={`${service.icon} services__icon`} aria-hidden="true"></i>
@@ -18,7 +19,7 @@ const Services = () => {
           <p className="services__description">{t(service.descriptionKey)}</p>
         </article>
       ))}
-    </div>
+    </CardGrid>
   </section>
   );
 };

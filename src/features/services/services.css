@@ -1,5 +1,4 @@
 .services__container {
-  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
 }
 
@@ -26,10 +25,4 @@
 .services__description {
   font-size: var(--small-font-size);
   line-height: 1.7;
-}
-
-@media screen and (max-width: 768px) {
-  .services__container {
-    grid-template-columns: 1fr;
-  }
 }
