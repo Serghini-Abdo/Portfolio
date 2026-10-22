@@ -6,7 +6,10 @@ const dictionaries = { en, fr };
 const LocaleContext = createContext(null);
 
 export const LocaleProvider = ({ children }) => {
-  const [locale, setLocale] = useState(() => localStorage.getItem("portfolio-locale") || "en");
+  const [locale, setLocale] = useState(() => {
+    const savedLocale = localStorage.getItem("portfolio-locale");
+    return savedLocale in dictionaries ? savedLocale : "en";
+  });
 
   useEffect(() => {
     localStorage.setItem("portfolio-locale", locale);

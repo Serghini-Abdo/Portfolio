@@ -28,3 +28,11 @@ test("switches between English and French", () => {
   expect(screen.getByRole("heading", { name: /à propos de moi/i })).toBeInTheDocument();
   expect(screen.getByRole("button", { name: "Language" })).toHaveAttribute("aria-expanded", "false");
 });
+
+test("falls back to English for an unsupported saved locale", () => {
+  localStorage.setItem("portfolio-locale", "es");
+
+  render(<App />);
+
+  expect(screen.getByRole("heading", { name: /about me/i })).toBeInTheDocument();
+});
