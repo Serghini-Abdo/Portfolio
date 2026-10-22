@@ -6,6 +6,6 @@ test('renders the portfolio sections', () => {
   render(<App />);
   expect(screen.getByRole('heading', { name: /about me/i })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: /services/i })).toBeInTheDocument();
-  expect(screen.getByRole('heading', { name: /portfolio/i })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: /^portfolio$/i })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: /contact me/i })).toBeInTheDocument();
 });
