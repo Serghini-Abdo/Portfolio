@@ -71,6 +71,7 @@
     justify-self: center;
     width: 300px;
     height: 300px;
+    border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
     animation: profile__animate 8s ease-in-out infinite 1s;
 }
 
@@ -163,7 +164,6 @@
     }
     
   }
-  
   /* For medium devices */
   @media screen and (max-width: 768px) {
     .home__content {
