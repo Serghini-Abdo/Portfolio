@@ -6,7 +6,7 @@
 .skills__content {
     background-color: var(--container-color);
     border: 1px solid rgba(0, 0, 0,0.1);
-    padding: 2rem 4rem;
+    padding: 2rem;
     border-radius: 1.25rem;
 }
 
@@ -17,25 +17,14 @@
     margin-bottom: var(--mb-1-5);
 }
 
-.skills__box {
-    display: flex;
-    justify-content: center;
-    column-gap: 2.5rem;
-}
-
 .skills__group {
     display: grid;
     align-items: flex-start;
     row-gap: 1rem;
 }
 
-.skills__group--grid {
-    grid-template-rows: repeat(3, auto);
-    grid-auto-flow: column;
-    grid-auto-columns: max-content;
-}
-
 .skills__data {
+    align-items: center;
     display: flex;
     column-gap: 0.5rem;
 }
@@ -50,10 +39,6 @@
     font-weight: var(--font-medium);
     line-height: 18px;
 
-}
-
-.skills__level {
-    font-size: var(--tiny-font-size);
 }
 
 

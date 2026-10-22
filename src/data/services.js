@@ -1,18 +1,18 @@
 const services = [
   {
+    icon: "uil uil-bug",
+    titleKey: "services.qaTitle",
+    descriptionKey: "services.qaDescription",
+  },
+  {
+    icon: "uil uil-robot",
+    titleKey: "services.aiTitle",
+    descriptionKey: "services.aiDescription",
+  },
+  {
     icon: "uil uil-browser",
-    titleKey: "services.frontendTitle",
-    descriptionKey: "services.frontendDescription",
-  },
-  {
-    icon: "uil uil-server-network",
-    titleKey: "services.backendTitle",
-    descriptionKey: "services.backendDescription",
-  },
-  {
-    icon: "uil uil-layer-group",
-    titleKey: "services.fullStackTitle",
-    descriptionKey: "services.fullStackDescription",
+    titleKey: "services.webTitle",
+    descriptionKey: "services.webDescription",
   },
 ];
 

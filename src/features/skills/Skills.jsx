@@ -1,8 +1,7 @@
 import React from 'react'
 import './skills.css'
-import Frontend from './Frontend'
-import Backend from './Backend'
-import Tools from './Tools'
+import SkillGroup from './SkillGroup'
+import { skillGroups } from '../../data/skills'
 import SectionHeading from '../../components/ui/SectionHeading'
 import CardGrid from '../../components/ui/CardGrid'
 import { useLocale } from '../../app/LocaleContext'
@@ -14,9 +13,9 @@ const Skills = () => {
         <SectionHeading title={t("skills.title")} subtitle={t("skills.subtitle")} />
 
         <CardGrid className="skills__container container">
-            <Frontend/>
-            <Backend/>
-            <Tools/>
+            {skillGroups.map((group) => (
+              <SkillGroup key={group.titleKey} {...group} />
+            ))}
         </CardGrid>
     </section>
 )

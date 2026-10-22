@@ -1,29 +1,34 @@
 const en = {
   language: { switchTo: "Français" },
   nav: {
-    home: "Home", about: "About", skills: "Skills", services: "Services",
+    home: "Home", about: "About", skills: "Skills", services: "Expertise",
     portfolio: "Portfolio", contact: "Contact",
   },
   home: {
-    subtitle: "Full Stack Developer",
-    description: "Full Stack Developer | React & Laravel | Passionate about Cutting-Edge Technologies & Innovative Solutions",
+    subtitle: "Digital QA Specialist | Conversational AI",
+    description: "I test digital products and build AI-assisted tools for QA with Python, JavaScript and LLM agents.",
     reachOut: "Reach out",
   },
   about: {
     title: "About Me", subtitle: "My introduction", education: "Education",
-    experience: "Experience", projects: "Projects", description: "Enthusiastic Full Stack Developer specialized in React and Laravel. Strong skills in frontend and backend development, as well as in solving complex problems. Committed to continuous learning and always up to date with the latest technologies to deliver innovative and efficient solutions.", downloadCv: "Download CV",
+    experience: "Experience", certifications: "Certifications",
+    educationValue: "Engineering, 2027", experienceValue: "Since 2024", certificationsValue: "4 Cisco",
+    description: "I'm a Digital QA Specialist at Cnexia in Fez, with a computer engineering background. I design and run tests, investigate root causes, and work daily with developers and product owners. Alongside testing, I build small AI tools such as Microsoft 365 Copilot agents and prompt templates that produce Jira-ready test cases, and I'm growing toward conversational AI development.",
+    downloadCv: "Download CV",
   },
   skills: {
-    title: "Skills", subtitle: "My technical skills", frontend: "Frontend development", backend: "Backend development", tools: "Tools & Methods", advanced: "Advanced", intermediate: "Intermediate", basic: "Basic",
+    title: "Skills", subtitle: "My technical skills", qa: "QA & Collaboration", ai: "AI & Conversational", development: "Development",
+    testDesign: "Test design & execution", defectAnalysis: "Defect & root cause analysis",
+    promptEngineering: "Prompt engineering", llmAgents: "LLM agents",
   },
   services: {
-    title: "Services", subtitle: "What I can build", frontendTitle: "Frontend Development", frontendDescription: "Responsive and accessible interfaces built with React, JavaScript, and modern CSS.", backendTitle: "Backend Development", backendDescription: "Reliable APIs and server-side features using Laravel, PHP, Node.js, and databases.", fullStackTitle: "Full Stack Solutions", fullStackDescription: "End-to-end applications that connect polished user experiences with maintainable backends.",
+    title: "Expertise", subtitle: "What I do", qaTitle: "QA & Defect Analysis", qaDescription: "Test design and execution, root cause analysis, and clear defect reports tracked in Jira and documented in Confluence.", aiTitle: "AI-Assisted Testing", aiDescription: "Microsoft 365 Copilot agents and reusable prompt templates that speed up consistent test case writing.", webTitle: "Web Development", webDescription: "Web features built with Laravel, PHP and JavaScript, backed by REST APIs and Git workflows.",
   },
   portfolio: {
-    title: "Portfolio", subtitle: "Selected work", portfolioWebsite: "Portfolio Website", portfolioDescription: "A responsive personal website presenting my experience, skills, and selected work.", frontendApplications: "Frontend Applications", frontendDescription: "Clean interfaces focused on responsive layouts, reusable components, and accessible interactions.", fullStackSolutions: "Full Stack Solutions", fullStackDescription: "Web applications that connect practical user experiences with maintainable backend services.", viewProject: "View project",
+    title: "Portfolio", subtitle: "Selected work", qaToolkit: "AI-Assisted QA Toolkit", qaToolkitDescription: "Copilot agents and prompt templates I built at Cnexia to draft consistent, Jira-ready test cases and defect reports.", portfolioWebsite: "Portfolio Website", portfolioDescription: "This bilingual, responsive personal site, built with React and deployed on Vercel with a serverless contact form.", viewProject: "View project",
   },
   contact: {
-    title: "Contact Me", subtitle: "Let's work together", email: "Email", emailValue: "Send a message", linkedin: "LinkedIn", linkedinValue: "Connect with me", github: "GitHub", githubValue: "See my repositories", name: "Name", emailField: "Email", subject: "Subject", message: "Message", send: "Send message", nameRequired: "Name is required.", emailRequired: "Email is required.", invalidEmail: "Enter a valid email address.", subjectRequired: "Subject is required.", messageRequired: "Message is required.", sending: "Sending message...", sent: "Message sent successfully.", failed: "Unable to send message. Please try again.", close: "Close notification",
+    title: "Contact Me", subtitle: "Open to QA and conversational AI opportunities", email: "Email", emailValue: "Send a message", linkedin: "LinkedIn", linkedinValue: "Connect with me", github: "GitHub", githubValue: "See my repositories", name: "Name", emailField: "Email", subject: "Subject", message: "Message", send: "Send message", nameRequired: "Name is required.", emailRequired: "Email is required.", invalidEmail: "Enter a valid email address.", subjectRequired: "Subject is required.", messageRequired: "Message is required.", sending: "Sending message...", sent: "Message sent successfully.", failed: "Unable to send message. Please try again.", close: "Close notification",
   },
 };
 

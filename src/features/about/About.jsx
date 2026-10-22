@@ -1,6 +1,6 @@
 import React from "react";
 import AboutImg from "../../assets/about__img.jpg";
-import CV from "../../assets/moncv.pdf";
+import CV from "../../assets/abdelmoula-serghini-cv.pdf";
 import Info from "./Info";
 import "./about.css";
 import Button from "../../components/ui/Button";
@@ -14,7 +14,7 @@ const About = () => {
       <SectionHeading title={t("about.title")} subtitle={t("about.subtitle")} />
 
       <div className="about__container container grid">
-        <img src={AboutImg} alt="Serghini Abdelmoula" className="about__img" />
+        <img src={AboutImg} alt="Abdelmoula Serghini" className="about__img" />
 
         <div className="about__data">
           <Info />

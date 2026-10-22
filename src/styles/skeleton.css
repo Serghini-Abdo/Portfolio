@@ -1,0 +1,128 @@
+/* Locale-switch skeleton: the real elements turn into placeholders (see LocaleContext). */
+html.is-switching {
+  --skeleton-bg: linear-gradient(90deg, rgb(128 128 128 / 14%) 25%, rgb(128 128 128 / 28%) 50%, rgb(128 128 128 / 14%) 75%) 0 0 / 200% 100%;
+  --skeleton-radius: 0.75rem;
+  --skeleton-nav-height: 2rem;
+}
+
+html.is-switching body {
+  pointer-events: none;
+  cursor: progress;
+}
+
+/* Text and controls become gray bars. */
+html.is-switching :is(h1, h2, h3, p, span, a, button, input, textarea, img, .nav__toggle) {
+  color: transparent !important;
+  text-shadow: none !important;
+  background: var(--skeleton-bg) !important;
+  border-radius: var(--skeleton-radius) !important;
+  animation: skeleton-shimmer 1.2s ease-in-out infinite;
+}
+
+/* Avoid stacking bars when a bar sits inside another one. */
+html.is-switching :is(h1, h2, h3, p, span, a, button) :is(h1, h2, h3, p, span, a, button) {
+  background: none !important;
+  animation: none;
+}
+
+/* Cards, section headings and form fields become one shape; everything inside is hidden. */
+html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading) {
+  background: var(--skeleton-bg) !important;
+  border-color: transparent !important;
+  border-radius: var(--skeleton-radius) !important;
+  animation: skeleton-shimmer 1.2s ease-in-out infinite;
+}
+
+html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading) * {
+  visibility: hidden;
+}
+
+html.is-switching .section__heading {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+}
+
+/* The profile photo is the only placeholder that keeps its own shape. */
+html.is-switching .home__img {
+  color: transparent !important;
+  background: var(--skeleton-bg) !important;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+
+/* Header items share one height. */
+html.is-switching :is(.nav__logo, .nav__link) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  height: var(--skeleton-nav-height);
+  min-height: 0;
+  font-size: var(--small-font-size);
+}
+
+html.is-switching .nav__logo b {
+  font-size: inherit !important;
+}
+
+html.is-switching .language-select {
+  height: var(--skeleton-nav-height);
+}
+
+html.is-switching .language-select__trigger {
+  border-radius: var(--skeleton-radius);
+}
+
+html.is-switching :is(.nav__link, .nav__toggle) i {
+  opacity: 0;
+}
+
+/* Decorations that would otherwise stay visible. */
+html.is-switching .home__subtitle::before {
+  background: none;
+}
+
+html.is-switching :is(.home__scroll-arrow, .home__social-icon i) {
+  opacity: 0;
+}
+
+html.is-switching .home__social-icon {
+  display: block;
+  width: 1.75rem;
+  height: 1.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  html.is-switching .nav__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 2.75rem;
+    height: var(--skeleton-nav-height);
+  }
+}
+
+html.is-switching ::placeholder {
+  color: transparent;
+}
+
+html.is-switching :is(svg, .nav__logo b) {
+  opacity: 0;
+}
+
+html.is-switching img {
+  filter: brightness(0);
+  opacity: 0.1;
+}
+
+@keyframes skeleton-shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.is-switching * {
+    animation: none !important;
+  }
+}

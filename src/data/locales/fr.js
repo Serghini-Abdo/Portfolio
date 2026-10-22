@@ -1,29 +1,34 @@
 const fr = {
   language: { switchTo: "English" },
   nav: {
-    home: "Accueil", about: "À propos", skills: "Compétences", services: "Services",
+    home: "Accueil", about: "À propos", skills: "Compétences", services: "Expertise",
     portfolio: "Portfolio", contact: "Contact",
   },
   home: {
-    subtitle: "Développeur Full Stack",
-    description: "Développeur Full Stack | React & Laravel | Passionné par les technologies modernes et les solutions innovantes",
+    subtitle: "Spécialiste QA digital | IA conversationnelle",
+    description: "Je teste des produits digitaux et je crée des outils d'IA pour la QA avec Python, JavaScript et des agents LLM.",
     reachOut: "Me contacter",
   },
   about: {
     title: "À propos de moi", subtitle: "Mon introduction", education: "Formation",
-    experience: "Expérience", projects: "Projets", description: "Développeur Full Stack passionné, spécialisé en React et Laravel. Solides compétences en développement frontend et backend, ainsi qu'en résolution de problèmes complexes. Engagé dans l'apprentissage continu et toujours à jour avec les dernières technologies pour créer des solutions innovantes et efficaces.", downloadCv: "Télécharger le CV",
+    experience: "Expérience", certifications: "Certifications",
+    educationValue: "Ingénieur, 2027", experienceValue: "Depuis 2024", certificationsValue: "4 Cisco",
+    description: "Je suis Spécialiste QA digital chez Cnexia à Fès, avec une formation en génie informatique. Je conçois et exécute des tests, j'analyse les causes racines et je travaille au quotidien avec les développeurs et les product owners. En parallèle, je crée de petits outils d'IA, comme des agents Microsoft 365 Copilot et des modèles de prompts qui produisent des cas de test prêts pour Jira, et je m'oriente vers le développement d'IA conversationnelle.",
+    downloadCv: "Télécharger le CV",
   },
   skills: {
-    title: "Compétences", subtitle: "Mes compétences techniques", frontend: "Développement frontend", backend: "Développement backend", tools: "Outils et méthodes", advanced: "Avancé", intermediate: "Intermédiaire", basic: "Débutant",
+    title: "Compétences", subtitle: "Mes compétences techniques", qa: "QA et collaboration", ai: "IA et conversationnel", development: "Développement",
+    testDesign: "Conception et exécution de tests", defectAnalysis: "Analyse des défauts et des causes racines",
+    promptEngineering: "Ingénierie de prompts", llmAgents: "Agents LLM",
   },
   services: {
-    title: "Services", subtitle: "Ce que je peux créer", frontendTitle: "Développement frontend", frontendDescription: "Interfaces responsives et accessibles avec React, JavaScript et CSS moderne.", backendTitle: "Développement backend", backendDescription: "APIs fiables et fonctionnalités serveur avec Laravel, PHP, Node.js et des bases de données.", fullStackTitle: "Solutions Full Stack", fullStackDescription: "Applications complètes reliant des expériences utilisateur soignées à des backends maintenables.",
+    title: "Expertise", subtitle: "Ce que je fais", qaTitle: "QA et analyse des défauts", qaDescription: "Conception et exécution de tests, analyse des causes racines et rapports de défauts clairs suivis dans Jira et documentés dans Confluence.", aiTitle: "Tests assistés par IA", aiDescription: "Agents Microsoft 365 Copilot et modèles de prompts réutilisables pour rédiger des cas de test cohérents plus rapidement.", webTitle: "Développement web", webDescription: "Fonctionnalités web avec Laravel, PHP et JavaScript, appuyées sur des APIs REST et des workflows Git.",
   },
   portfolio: {
-    title: "Portfolio", subtitle: "Projets sélectionnés", portfolioWebsite: "Site portfolio", portfolioDescription: "Un site personnel responsive présentant mon expérience, mes compétences et une sélection de travaux.", frontendApplications: "Applications frontend", frontendDescription: "Interfaces soignées axées sur le responsive, les composants réutilisables et l'accessibilité.", fullStackSolutions: "Solutions Full Stack", fullStackDescription: "Applications web reliant des expériences utilisateur pratiques à des services backend maintenables.", viewProject: "Voir le projet",
+    title: "Portfolio", subtitle: "Projets sélectionnés", qaToolkit: "Boîte à outils QA assistée par IA", qaToolkitDescription: "Agents Copilot et modèles de prompts créés chez Cnexia pour rédiger des cas de test et des rapports de défauts cohérents, prêts pour Jira.", portfolioWebsite: "Site portfolio", portfolioDescription: "Ce site personnel bilingue et responsive, créé avec React et déployé sur Vercel avec un formulaire de contact serverless.", viewProject: "Voir le projet",
   },
   contact: {
-    title: "Contactez-moi", subtitle: "Travaillons ensemble", email: "Email", emailValue: "Envoyer un message", linkedin: "LinkedIn", linkedinValue: "Échangeons", github: "GitHub", githubValue: "Voir mes dépôts", name: "Nom", emailField: "Email", subject: "Sujet", message: "Message", send: "Envoyer le message", nameRequired: "Le nom est obligatoire.", emailRequired: "L'email est obligatoire.", invalidEmail: "Saisissez une adresse email valide.", subjectRequired: "Le sujet est obligatoire.", messageRequired: "Le message est obligatoire.", sending: "Envoi du message...", sent: "Message envoyé avec succès.", failed: "Impossible d'envoyer le message. Réessayez.", close: "Fermer la notification",
+    title: "Contactez-moi", subtitle: "Ouvert aux opportunités en QA et IA conversationnelle", email: "Email", emailValue: "Envoyer un message", linkedin: "LinkedIn", linkedinValue: "Échangeons", github: "GitHub", githubValue: "Voir mes dépôts", name: "Nom", emailField: "Email", subject: "Sujet", message: "Message", send: "Envoyer le message", nameRequired: "Le nom est obligatoire.", emailRequired: "L'email est obligatoire.", invalidEmail: "Saisissez une adresse email valide.", subjectRequired: "Le sujet est obligatoire.", messageRequired: "Le message est obligatoire.", sending: "Envoi du message...", sent: "Message envoyé avec succès.", failed: "Impossible d'envoyer le message. Réessayez.", close: "Fermer la notification",
   },
 };
 
