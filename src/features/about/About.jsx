@@ -3,12 +3,13 @@ import AboutImg from "../../assets/about__img.jpg";
 import CV from "../../assets/moncv.pdf";
 import Info from "./Info";
 import "./about.css";
+import Button from "../../components/ui/Button";
+import SectionHeading from "../../components/ui/SectionHeading";
 
 const About = () => {
   return (
     <section className="about section" id="about">
-      <h2 className="section__title">About Me</h2>
-      <span className="section__subtitle">My introduction</span>
+      <SectionHeading title="About Me" subtitle="My introduction" />
 
       <div className="about__container container grid">
         <img src={AboutImg} alt="Serghini Abdelmoula" className="about__img" />
@@ -23,7 +24,7 @@ const About = () => {
             always up to date with the latest technologies to deliver innovative
             and efficient solutions.
           </p>
-          <a download="" href={CV} className="button button--flex">
+          <Button as="a" download="" href={CV}>
             Download CV
             <svg
               className="button__icon"
@@ -50,7 +51,7 @@ const About = () => {
                 fill="var(--container-color)"
               ></path>
             </svg>
-          </a>
+          </Button>
         </div>
       </div>
     </section>

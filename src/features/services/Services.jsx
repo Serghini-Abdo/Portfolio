@@ -1,5 +1,6 @@
 import React from "react";
 import "./services.css";
+import SectionHeading from "../../components/ui/SectionHeading";
 
 const services = [
   {
@@ -25,8 +26,7 @@ const services = [
 const Services = () => {
   return (
     <section className="services section" id="services">
-      <h2 className="section__title">Services</h2>
-      <span className="section__subtitle">What I can build</span>
+      <SectionHeading title="Services" subtitle="What I can build" />
 
       <div className="services__container container grid">
         {services.map((service) => (

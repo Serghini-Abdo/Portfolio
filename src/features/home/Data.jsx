@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../components/ui/Button";
 
 const Data = () => {
   return (
@@ -62,7 +63,7 @@ const Data = () => {
         Full Stack Developer | React & Laravel | Passionate about Cutting-Edge
         Technologies & Innovative Solutions
       </p>
-      <a href="#contact" className="button button--flex">
+      <Button as="a" href="#contact">
         Reach out
         <svg
           className="button__icon"
@@ -81,7 +82,7 @@ const Data = () => {
             fill="var(--container-color)"
           ></path>
         </svg>
-      </a>
+      </Button>
     </div>
   );
 };

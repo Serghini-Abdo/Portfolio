@@ -3,12 +3,12 @@ import './skills.css'
 import Frontend from './Frontend'
 import Backend from './Backend'
 import Tools from './Tools'
+import SectionHeading from '../../components/ui/SectionHeading'
 
 const Skills = () => {
   return (
     <section className="skills section" id="skills">
-        <h2 className="section__title">Skills</h2>
-        <span className="section__subtitle">My technical skills</span>
+        <SectionHeading title="Skills" subtitle="My technical skills" />
 
         <div className="skills__container container grid">
             <Frontend/>

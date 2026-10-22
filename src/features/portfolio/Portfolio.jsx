@@ -1,5 +1,6 @@
 import React from "react";
 import "./portfolio.css";
+import SectionHeading from "../../components/ui/SectionHeading";
 
 const projects = [
   {
@@ -28,8 +29,7 @@ const projects = [
 const Portfolio = () => {
   return (
     <section className="portfolio section" id="portfolio">
-      <h2 className="section__title">Portfolio</h2>
-      <span className="section__subtitle">Selected work</span>
+      <SectionHeading title="Portfolio" subtitle="Selected work" />
 
       <div className="portfolio__container container grid">
         {projects.map((project) => (

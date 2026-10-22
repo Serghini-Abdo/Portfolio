@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./contact.css";
+import Button from "../../components/ui/Button";
+import SectionHeading from "../../components/ui/SectionHeading";
 
 const contactLinks = [
   {
@@ -80,8 +82,7 @@ const Contact = () => {
 
   return (
     <section className="contact section" id="contact">
-      <h2 className="section__title">Contact Me</h2>
-      <span className="section__subtitle">Let&apos;s work together</span>
+      <SectionHeading title="Contact Me" subtitle="Let's work together" />
 
       <div className="contact__container container grid">
         <div className="contact__content">
@@ -124,9 +125,9 @@ const Contact = () => {
             <textarea className={errors.message ? "contact__field-error" : ""} id="contact-message" name="message" rows="6" aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? "contact-message-error" : undefined} />
             {errors.message && <span className="contact__error" id="contact-message-error">{errors.message}</span>}
           </div>
-          <button className="button button--flex" type="submit">
+          <Button type="submit">
             Send message <i className="uil uil-message button__icon" aria-hidden="true"></i>
-          </button>
+          </Button>
           {status && (
             <div className="contact__status contact__status--toast" role="status">
               <span>{status}</span>
