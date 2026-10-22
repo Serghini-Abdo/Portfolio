@@ -66,6 +66,7 @@ module.exports = async function handler(req, res) {
 
     return res.status(200).json({ success: true });
   } catch (error) {
+    console.error("Contact delivery failed:", error);
     return res.status(500).json({ error: "Unable to send message" });
   }
 };
