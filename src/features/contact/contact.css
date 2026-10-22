@@ -52,6 +52,11 @@
   gap: 1.25rem;
 }
 
+.contact__honeypot {
+  position: absolute;
+  left: -9999px;
+}
+
 .contact__form-group {
   display: grid;
   gap: 0.5rem;

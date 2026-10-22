@@ -79,6 +79,7 @@ const Contact = () => {
         </div>
 
         <form className="contact__form" id="contact-form" noValidate onSubmit={handleSubmit}>
+          <input className="contact__honeypot" name="website" type="text" tabIndex="-1" autoComplete="off" aria-hidden="true" />
           <div className="contact__form-group">
             <label className={errors.name ? "contact__field-error" : ""} htmlFor="contact-name">{t("contact.name")}</label>
             <input className={errors.name ? "contact__field-error" : ""} id="contact-name" name="name" type="text" aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "contact-name-error" : undefined} />
