@@ -110,7 +110,11 @@
     }
 
     .nav__toggle {
-        font-size: 1.1rem;
+        display: grid;
+        width: 2.75rem;
+        height: 2.75rem;
+        place-items: center;
+        font-size: 1.6rem;
     }
 
     .nav__icon,
