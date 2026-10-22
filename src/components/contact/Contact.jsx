@@ -25,21 +25,29 @@ const contactLinks = [
 const Contact = () => {
   const [status, setStatus] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
-    const email = process.env.REACT_APP_CONTACT_EMAIL;
+    const formElement = event.currentTarget;
 
-    if (!email) {
-      setStatus("The contact form needs REACT_APP_CONTACT_EMAIL to be configured.");
-      return;
+    setStatus("Sending message...");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(form.entries())),
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to send message");
+      }
+
+      formElement.reset();
+      setStatus("Message sent successfully.");
+    } catch (error) {
+      setStatus("Unable to send message. Please try again.");
     }
-
-    const subject = encodeURIComponent(form.get("subject"));
-    const message = encodeURIComponent(
-      "From: " + form.get("name") + " (" + form.get("email") + ")\\n\\n" + form.get("message")
-    );
-    window.location.href = `mailto:${email}?subject=${subject}&body=${message}`;
   };
 
   return (
