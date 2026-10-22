@@ -84,6 +84,12 @@
   font-size: var(--small-font-size);
 }
 
+@media screen and (min-width: 769px) {
+  .contact__content {
+    padding-top: 1.75rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .contact__container {
     grid-template-columns: 1fr;
