@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import App from "./App";
+import App from "./app/App";
 
 test("renders the portfolio sections", () => {
   render(<App />);
