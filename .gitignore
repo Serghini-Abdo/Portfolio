@@ -11,9 +11,11 @@
 # production
 /build
 /dist
+/.phase4-old
 
 # misc
 .DS_Store
+AGENTS.md
 .env.local
 .env.development.local
 .env.test.local
