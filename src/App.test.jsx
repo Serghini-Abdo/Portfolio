@@ -18,3 +18,12 @@ test("shows inline contact errors for an empty form", () => {
   expect(screen.getByText("Subject is required.")).toBeInTheDocument();
   expect(screen.getByText("Message is required.")).toBeInTheDocument();
 });
+
+test("switches between English and French", () => {
+  render(<App />);
+
+  fireEvent.click(screen.getByRole("button", { name: "Français" }));
+
+  expect(screen.getByRole("heading", { name: /à propos de moi/i })).toBeInTheDocument();
+  expect(screen.getByRole("button", { name: "English" })).toBeInTheDocument();
+});

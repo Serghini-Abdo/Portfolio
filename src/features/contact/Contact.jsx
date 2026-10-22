@@ -4,13 +4,15 @@ import Button from "../../components/ui/Button";
 import SectionHeading from "../../components/ui/SectionHeading";
 import contactLinks from "../../data/contactLinks";
 import { sendContactMessage } from "../../services/contactApi";
+import { useLocale } from "../../app/LocaleContext";
 
 const Contact = () => {
+  const { t } = useLocale();
   const [status, setStatus] = useState("");
   const [errors, setErrors] = useState({});
 
   useEffect(() => {
-    if (!status || status === "Sending message...") {
+    if (!status || status === "sending") {
       return undefined;
     }
 
@@ -25,14 +27,14 @@ const Contact = () => {
     const values = Object.fromEntries(form.entries());
     const nextErrors = {};
 
-    if (!values.name.trim()) nextErrors.name = "Name is required.";
+    if (!values.name.trim()) nextErrors.name = "contact.nameRequired";
     if (!values.email.trim()) {
-      nextErrors.email = "Email is required.";
+      nextErrors.email = "contact.emailRequired";
     } else if (!/^\S+@\S+\.\S+$/.test(values.email)) {
-      nextErrors.email = "Enter a valid email address.";
+      nextErrors.email = "contact.invalidEmail";
     }
-    if (!values.subject.trim()) nextErrors.subject = "Subject is required.";
-    if (!values.message.trim()) nextErrors.message = "Message is required.";
+    if (!values.subject.trim()) nextErrors.subject = "contact.subjectRequired";
+    if (!values.message.trim()) nextErrors.message = "contact.messageRequired";
 
     if (Object.keys(nextErrors).length > 0) {
       setErrors(nextErrors);
@@ -41,20 +43,20 @@ const Contact = () => {
     }
 
     setErrors({});
-    setStatus("Sending message...");
+    setStatus("sending");
 
     try {
       await sendContactMessage(values);
       formElement.reset();
-      setStatus("Message sent successfully.");
+      setStatus("sent");
     } catch (error) {
-      setStatus("Unable to send message. Please try again.");
+      setStatus("failed");
     }
   };
 
   return (
     <section className="contact section" id="contact">
-      <SectionHeading title="Contact Me" subtitle="Let's work together" />
+      <SectionHeading title={t("contact.title")} subtitle={t("contact.subtitle")} />
 
       <div className="contact__container container grid">
         <div className="contact__content">
@@ -62,14 +64,14 @@ const Contact = () => {
             <a
               className="contact__card"
               href={link.href}
-              key={link.label}
+              key={link.labelKey}
               target={link.href.startsWith("http") ? "_blank" : undefined}
               rel={link.href.startsWith("http") ? "noreferrer" : undefined}
             >
               <i className={`${link.icon} contact__card-icon`} aria-hidden="true"></i>
               <span>
-                <strong className="contact__card-title">{link.label}</strong>
-                <small className="contact__card-data">{link.value}</small>
+                <strong className="contact__card-title">{t(link.labelKey)}</strong>
+                <small className="contact__card-data">{t(link.valueKey)}</small>
               </span>
               <i className="uil uil-arrow-up-right contact__card-arrow" aria-hidden="true"></i>
             </a>
@@ -78,35 +80,35 @@ const Contact = () => {
 
         <form className="contact__form" id="contact-form" noValidate onSubmit={handleSubmit}>
           <div className="contact__form-group">
-            <label className={errors.name ? "contact__field-error" : ""} htmlFor="contact-name">Name</label>
+            <label className={errors.name ? "contact__field-error" : ""} htmlFor="contact-name">{t("contact.name")}</label>
             <input className={errors.name ? "contact__field-error" : ""} id="contact-name" name="name" type="text" aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "contact-name-error" : undefined} />
-            {errors.name && <span className="contact__error" id="contact-name-error">{errors.name}</span>}
+            {errors.name && <span className="contact__error" id="contact-name-error">{t(errors.name)}</span>}
           </div>
           <div className="contact__form-group">
-            <label className={errors.email ? "contact__field-error" : ""} htmlFor="contact-email">Email</label>
+            <label className={errors.email ? "contact__field-error" : ""} htmlFor="contact-email">{t("contact.emailField")}</label>
             <input className={errors.email ? "contact__field-error" : ""} id="contact-email" name="email" type="email" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "contact-email-error" : undefined} />
-            {errors.email && <span className="contact__error" id="contact-email-error">{errors.email}</span>}
+            {errors.email && <span className="contact__error" id="contact-email-error">{t(errors.email)}</span>}
           </div>
           <div className="contact__form-group">
-            <label className={errors.subject ? "contact__field-error" : ""} htmlFor="contact-subject">Subject</label>
+            <label className={errors.subject ? "contact__field-error" : ""} htmlFor="contact-subject">{t("contact.subject")}</label>
             <input className={errors.subject ? "contact__field-error" : ""} id="contact-subject" name="subject" type="text" aria-invalid={Boolean(errors.subject)} aria-describedby={errors.subject ? "contact-subject-error" : undefined} />
-            {errors.subject && <span className="contact__error" id="contact-subject-error">{errors.subject}</span>}
+            {errors.subject && <span className="contact__error" id="contact-subject-error">{t(errors.subject)}</span>}
           </div>
           <div className="contact__form-group">
-            <label className={errors.message ? "contact__field-error" : ""} htmlFor="contact-message">Message</label>
+            <label className={errors.message ? "contact__field-error" : ""} htmlFor="contact-message">{t("contact.message")}</label>
             <textarea className={errors.message ? "contact__field-error" : ""} id="contact-message" name="message" rows="6" aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? "contact-message-error" : undefined} />
-            {errors.message && <span className="contact__error" id="contact-message-error">{errors.message}</span>}
+            {errors.message && <span className="contact__error" id="contact-message-error">{t(errors.message)}</span>}
           </div>
           <Button type="submit">
-            Send message <i className="uil uil-message button__icon" aria-hidden="true"></i>
+            {t("contact.send")} <i className="uil uil-message button__icon" aria-hidden="true"></i>
           </Button>
           {status && (
             <div className="contact__status contact__status--toast" role="status">
-              <span>{status}</span>
+              <span>{t(`contact.${status}`)}</span>
               <button
                 className="contact__status-close"
                 type="button"
-                aria-label="Close notification"
+                aria-label={t("contact.close")}
                 onClick={() => setStatus("")}
               >
                 ×

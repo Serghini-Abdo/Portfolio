@@ -1,20 +1,20 @@
 const contactLinks = [
   {
     icon: "uil uil-envelope",
-    label: "Email",
-    value: "Send a message",
+    labelKey: "contact.email",
+    valueKey: "contact.emailValue",
     href: "#contact-form",
   },
   {
     icon: "uil uil-linkedin-alt",
-    label: "LinkedIn",
-    value: "Connect with me",
+    labelKey: "contact.linkedin",
+    valueKey: "contact.linkedinValue",
     href: "https://www.linkedin.com/in/abdelmoula-serghini/",
   },
   {
     icon: "uil uil-github",
-    label: "GitHub",
-    value: "See my repositories",
+    labelKey: "contact.github",
+    valueKey: "contact.githubValue",
     href: "https://github.com/Serghini-Abdo",
   },
 ];

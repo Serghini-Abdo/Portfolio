@@ -1,22 +1,19 @@
 const projects = [
   {
-    title: "Portfolio Website",
-    description:
-      "A responsive personal website presenting my experience, skills, and selected work.",
+    titleKey: "portfolio.portfolioWebsite",
+    descriptionKey: "portfolio.portfolioDescription",
     technologies: "React · CSS · Vercel",
     link: "https://github.com/Serghini-Abdo/Portfolio",
   },
   {
-    title: "Frontend Applications",
-    description:
-      "Clean interfaces focused on responsive layouts, reusable components, and accessible interactions.",
+    titleKey: "portfolio.frontendApplications",
+    descriptionKey: "portfolio.frontendDescription",
     technologies: "React · JavaScript · Bootstrap",
     link: "https://github.com/Serghini-Abdo",
   },
   {
-    title: "Full Stack Solutions",
-    description:
-      "Web applications that connect practical user experiences with maintainable backend services.",
+    titleKey: "portfolio.fullStackSolutions",
+    descriptionKey: "portfolio.fullStackDescription",
     technologies: "Laravel · PHP · MySQL",
     link: "https://github.com/Serghini-Abdo",
   },

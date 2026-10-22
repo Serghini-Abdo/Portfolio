@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import "./header.css"
+import { useLocale } from "../LocaleContext";
 
 const Header = () => {
     // toggle menu
     const [Toggle,showMenu] = useState(false);
+    const { locale, toggleLocale, t } = useLocale();
   return (
     <header className="header">
        <nav className="nav container">
@@ -13,37 +15,37 @@ const Header = () => {
                 
                 <li className="nav__item">
                     <a href="#home" className="nav__link active-link">
-                        <i className="uil uil-estate nav__icon"></i> Home 
+                        <i className="uil uil-estate nav__icon"></i> {t("nav.home")}
                     </a>
                 </li>
 
                 <li className="nav__item">
                     <a href="#about" className="nav__link">
-                        <i className="uil uil-user nav__icon"></i> About
+                        <i className="uil uil-user nav__icon"></i> {t("nav.about")}
                     </a>
                 </li>
 
                 <li className="nav__item">
                     <a href="#skills" className="nav__link">
-                        <i className="uil uil-file-alt nav__icon"></i> Skills 
+                        <i className="uil uil-file-alt nav__icon"></i> {t("nav.skills")}
                     </a>
                 </li>
 
                 <li className="nav__item">
                     <a href="#services" className="nav__link">
-                        <i className="uil uil-briefcase-alt nav__icon"></i> Services  
+                        <i className="uil uil-briefcase-alt nav__icon"></i> {t("nav.services")}
                     </a>
                 </li>
 
                 <li className="nav__item">
                     <a href="#portfolio" className="nav__link">
-                        <i className="uil uil-scenery nav__icon"></i> Portfolio
+                        <i className="uil uil-scenery nav__icon"></i> {t("nav.portfolio")}
                     </a>
                 </li>
 
                 <li className="nav__item">
                     <a href="#contact" className="nav__link">
-                        <i className="uil uil-message nav__icon"></i> Contact
+                        <i className="uil uil-message nav__icon"></i> {t("nav.contact")}
                     </a>
                 </li>
             </ul>
@@ -52,6 +54,9 @@ const Header = () => {
         <div className="nav__toggle" onClick={()=>showMenu(!Toggle)}>
             <i className="uil uil-apps"></i>
         </div>
+        <button className="nav__language" type="button" onClick={toggleLocale} aria-label={t("language.switchTo")}>
+            {locale.toUpperCase()}
+        </button>
 
         </nav> 
     </header>

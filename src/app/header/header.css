@@ -16,9 +16,16 @@
 }
 
 .nav__logo,
-.nav__toggle {
+.nav__toggle,
+.nav__language {
     color: var(--title-color);
     font-weight: var(--font-medium);
+}
+
+.nav__language {
+    padding: 0.35rem 0.5rem;
+    background: transparent;
+    font-size: var(--small-font-size);
 }
 
 .nav__list {

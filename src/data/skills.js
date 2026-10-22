@@ -1,25 +1,25 @@
 export const frontendSkills = [
-  { skill: "HTML", level: "Advanced" },
-  { skill: "CSS", level: "Intermediate" },
-  { skill: "Javascript", level: "Intermediate" },
-  { skill: "Bootstrap", level: "Intermediate" },
-  { skill: "React", level: "Advanced" },
+  { skill: "HTML", levelKey: "skills.advanced" },
+  { skill: "CSS", levelKey: "skills.intermediate" },
+  { skill: "Javascript", levelKey: "skills.intermediate" },
+  { skill: "Bootstrap", levelKey: "skills.intermediate" },
+  { skill: "React", levelKey: "skills.advanced" },
 ];
 
 export const backendSkills = [
-  { skill: "Python", level: "Intermediate" },
-  { skill: "PHP", level: "Intermediate" },
-  { skill: "Laravel", level: "Advanced" },
-  { skill: "NodeJS", level: "Intermediate" },
-  { skill: "MongoDB", level: "Intermediate" },
-  { skill: "MySQL", level: "Intermediate" },
+  { skill: "Python", levelKey: "skills.intermediate" },
+  { skill: "PHP", levelKey: "skills.intermediate" },
+  { skill: "Laravel", levelKey: "skills.advanced" },
+  { skill: "NodeJS", levelKey: "skills.intermediate" },
+  { skill: "MongoDB", levelKey: "skills.intermediate" },
+  { skill: "MySQL", levelKey: "skills.intermediate" },
 ];
 
 export const toolSkills = [
-  { skill: "GIT&Github", level: "Advanced" },
-  { skill: "SCRUM", level: "Intermediate" },
-  { skill: "Docker", level: "Basic" },
-  { skill: "POO", level: "Intermediate" },
-  { skill: "CI/CD", level: "Intermediate" },
-  { skill: "Vercel", level: "Intermediate" },
+  { skill: "GIT&Github", levelKey: "skills.advanced" },
+  { skill: "SCRUM", levelKey: "skills.intermediate" },
+  { skill: "Docker", levelKey: "skills.basic" },
+  { skill: "POO", levelKey: "skills.intermediate" },
+  { skill: "CI/CD", levelKey: "skills.intermediate" },
+  { skill: "Vercel", levelKey: "skills.intermediate" },
 ];

@@ -5,11 +5,13 @@ import Info from "./Info";
 import "./about.css";
 import Button from "../../components/ui/Button";
 import SectionHeading from "../../components/ui/SectionHeading";
+import { useLocale } from "../../app/LocaleContext";
 
 const About = () => {
+  const { t } = useLocale();
   return (
     <section className="about section" id="about">
-      <SectionHeading title="About Me" subtitle="My introduction" />
+      <SectionHeading title={t("about.title")} subtitle={t("about.subtitle")} />
 
       <div className="about__container container grid">
         <img src={AboutImg} alt="Serghini Abdelmoula" className="about__img" />
@@ -17,15 +19,9 @@ const About = () => {
         <div className="about__data">
           <Info />
 
-          <p className="about__description">
-            Enthusiastic Full Stack Developer specialized in React and Laravel.
-            Strong skills in frontend and backend development, as well as in
-            solving complex problems. Committed to continuous learning and
-            always up to date with the latest technologies to deliver innovative
-            and efficient solutions.
-          </p>
+          <p className="about__description">{t("about.description")}</p>
           <Button as="a" download="" href={CV}>
-            Download CV
+            {t("about.downloadCv")}
             <svg
               className="button__icon"
               xmlns="http://www.w3.org/2000/svg"

@@ -1,9 +1,14 @@
 import React from "react";
 import { frontendSkills as skills } from "../../data/skills";
+import { useLocale } from "../../app/LocaleContext";
 
-const Frontend = () => (
+const Frontend = () => <FrontendContent />;
+
+const FrontendContent = () => {
+  const { t } = useLocale();
+  return (
   <div className="skills__content">
-    <h3 className="skills__title">Frontend developement</h3>
+    <h3 className="skills__title">{t("skills.frontend")}</h3>
 
     <div className="skills__box">
       <div className="skills__group skills__group--grid">
@@ -12,13 +17,14 @@ const Frontend = () => (
             <i className="bx bx-badge-check"></i>
             <div>
               <h3 className="skills__name">{item.skill}</h3>
-              <span className="skills__level">{item.level}</span>
+              <span className="skills__level">{t(item.levelKey)}</span>
             </div>
           </div>
         ))}
       </div>
     </div>
   </div>
-);
+  );
+};
 
 export default Frontend;

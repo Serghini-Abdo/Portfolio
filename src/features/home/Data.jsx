@@ -1,7 +1,9 @@
 import React from "react";
 import Button from "../../components/ui/Button";
+import { useLocale } from "../../app/LocaleContext";
 
 const Data = () => {
+  const { t } = useLocale();
   return (
     <div className="home__data">
       <h1 className="home__title">
@@ -57,14 +59,11 @@ const Data = () => {
         </svg>
       </h1>
 
-      <h3 className="home__subtitle">Full Stack Developer</h3>
+      <h3 className="home__subtitle">{t("home.subtitle")}</h3>
 
-      <p className="home__description">
-        Full Stack Developer | React & Laravel | Passionate about Cutting-Edge
-        Technologies & Innovative Solutions
-      </p>
+      <p className="home__description">{t("home.description")}</p>
       <Button as="a" href="#contact">
-        Reach out
+        {t("home.reachOut")}
         <svg
           className="button__icon"
           xmlns="http://www.w3.org/2000/svg"
