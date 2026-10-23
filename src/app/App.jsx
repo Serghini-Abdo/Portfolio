@@ -6,9 +6,11 @@ import Services from "../features/services/Services";
 import Portfolio from "../features/portfolio/Portfolio";
 import Contact from "../features/contact/Contact";
 import { LocaleProvider } from "./LocaleContext";
+import { ThemeProvider } from "./ThemeContext";
 
 function App() {
   return (
+    <ThemeProvider>
     <LocaleProvider>
       <Header />
       <main className="main">
@@ -20,6 +22,7 @@ function App() {
         <Contact />
       </main>
     </LocaleProvider>
+    </ThemeProvider>
   );
 }
 

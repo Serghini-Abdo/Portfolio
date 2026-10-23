@@ -11,7 +11,7 @@ import en from "../data/locales/en";
 import fr from "../data/locales/fr";
 
 const dictionaries = { en, fr };
-const SWITCH_DELAY_MS = 800;
+export const SWITCH_DELAY_MS = 800;
 const LocaleContext = createContext(null);
 
 export const LocaleProvider = ({ children }) => {

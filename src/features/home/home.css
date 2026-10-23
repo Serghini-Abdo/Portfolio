@@ -22,7 +22,7 @@
 }
 
 .home__social-icon:hover {
-    color: var(--title-color-dark);
+    color: var(--highlight-strong);
 }
 
 .home__title {
@@ -51,7 +51,7 @@
     position: absolute;
     width: 70px;
     height: 1px;
-    background-color: var(--text-color);
+    background-color: var(--line-color);
     left: 0;
     top: 1rem;
 }

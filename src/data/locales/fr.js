@@ -1,5 +1,6 @@
 const fr = {
   language: { switchTo: "English" },
+  theme: { toDark: "Passer en mode sombre", toLight: "Passer en mode clair" },
   nav: {
     home: "Accueil", about: "À propos", skills: "Compétences", services: "Expertise",
     portfolio: "Portfolio", contact: "Contact",

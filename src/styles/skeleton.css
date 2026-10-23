@@ -5,6 +5,10 @@ html.is-switching {
   --skeleton-nav-height: 2rem;
 }
 
+html[data-theme="dark"].is-switching {
+  --skeleton-bg: linear-gradient(90deg, rgb(255 255 255 / 7%) 25%, rgb(255 255 255 / 15%) 50%, rgb(255 255 255 / 7%) 75%) 0 0 / 200% 100%;
+}
+
 html.is-switching body {
   pointer-events: none;
   cursor: progress;
@@ -26,14 +30,14 @@ html.is-switching :is(h1, h2, h3, p, span, a, button) :is(h1, h2, h3, p, span, a
 }
 
 /* Cards, section headings and form fields become one shape; everything inside is hidden. */
-html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading) {
+html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading, .home__scroll-button) {
   background: var(--skeleton-bg) !important;
   border-color: transparent !important;
   border-radius: var(--skeleton-radius) !important;
   animation: skeleton-shimmer 1.2s ease-in-out infinite;
 }
 
-html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading) * {
+html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading, .home__scroll-button) * {
   visibility: hidden;
 }
 
@@ -51,7 +55,7 @@ html.is-switching .home__img {
 }
 
 /* Header items share one height. */
-html.is-switching :is(.nav__logo, .nav__link) {
+html.is-switching :is(.nav__logo, .nav__link, .theme-toggle) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,6 +120,10 @@ html.is-switching img {
   opacity: 0.1;
 }
 
+html[data-theme="dark"].is-switching img {
+  filter: brightness(0) invert(1);
+}
+
 @keyframes skeleton-shimmer {
   from { background-position: 200% 0; }
   to { background-position: -200% 0; }
@@ -125,4 +133,8 @@ html.is-switching img {
   html.is-switching * {
     animation: none !important;
   }
+}
+
+html.is-switching .theme-toggle {
+  width: var(--skeleton-nav-height);
 }

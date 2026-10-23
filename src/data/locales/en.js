@@ -1,5 +1,6 @@
 const en = {
   language: { switchTo: "Français" },
+  theme: { toDark: "Switch to dark mode", toLight: "Switch to light mode" },
   nav: {
     home: "Home", about: "About", skills: "Skills", services: "Expertise",
     portfolio: "Portfolio", contact: "Contact",

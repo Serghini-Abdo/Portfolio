@@ -1,7 +1,7 @@
 .portfolio__card {
   overflow: hidden;
   background-color: var(--container-color);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
   border-radius: 1.25rem;
 }
 
@@ -9,8 +9,8 @@
   display: grid;
   min-height: 150px;
   place-items: center;
-  background-color: var(--title-color);
-  color: var(--container-color);
+  background-color: var(--solid-bg);
+  color: var(--solid-fg);
 }
 
 .portfolio__preview-icon {
@@ -46,5 +46,5 @@
 }
 
 .portfolio__link:hover {
-  color: var(--title-color-dark);
+  color: var(--highlight-strong);
 }
