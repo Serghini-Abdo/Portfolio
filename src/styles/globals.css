@@ -1,6 +1,3 @@
-/*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3rem;
@@ -14,6 +11,19 @@
   --text-color: hsl(var(--hue), var(--sat), 46%);
   --body-color: hsl(var(--hue), var(--sat), 98%);
   --container-color: #fff;
+  --accent: #ffdd67;
+  --photo-ring: rgb(255 255 255 / 30%);
+  --highlight: var(--title-color);
+  --highlight-strong: var(--title-color-dark);
+  --line-color: var(--text-color);
+  --solid-bg: var(--title-color);
+  --solid-fg: var(--container-color);
+  --solid-bg-hover: var(--title-color-dark);
+  --border-color: rgb(0 0 0 / 10%);
+  --input-border-color: rgb(0 0 0 / 15%);
+  --shadow-color: rgb(0 0 0 / 15%);
+  --error-color: #d32f2f;
+  color-scheme: light;
 
   /*========== Font and typography ==========*/
   --body-font: "Poppins", sans-serif;
@@ -50,6 +60,27 @@
   --z-modal: 1000;
 }
 
+/*========== Dark theme ==========*/
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --title-color: hsl(0, 0%, 92%);
+  --title-color-dark: #fff;
+  --text-color: hsl(0, 0%, 66%);
+  --body-color: #121212;
+  --container-color: #1c1c1c;
+  --photo-ring: rgb(255 221 103 / 45%);
+  --highlight: #ffdd67;
+  --highlight-strong: #ffdd67;
+  --line-color: #ffdd67;
+  --solid-bg: #ffdd67;
+  --solid-fg: #1a1a1a;
+  --solid-bg-hover: #ffe88f;
+  --border-color: rgb(255 255 255 / 10%);
+  --input-border-color: rgb(255 255 255 / 18%);
+  --shadow-color: rgb(0 0 0 / 60%);
+  --error-color: #ff8a80;
+}
+
 /* Responsive typography */
 @media screen and (max-width: 992px) {
   :root {
@@ -68,10 +99,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable; /* no layout shift when the side panel locks scrolling */
 }
 
 body,
@@ -149,15 +182,15 @@ img {
 /*=============== BUTTONS ===============*/
 .button {
   display: inline-block;
-  background-color: var(--title-color);
-  color: var(--container-color);
+  background-color: var(--solid-bg);
+  color: var(--solid-fg);
   padding: 1.25rem 2rem;
   border-radius: 1rem;
   font-weight: var(--font-medium);
 }
 
 .button:hover {
-  background-color: var(--title-color-dark);
+  background-color: var(--solid-bg-hover);
 }
 
 .button__icon {

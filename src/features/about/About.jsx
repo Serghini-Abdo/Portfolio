@@ -1,6 +1,6 @@
 import React from "react";
-import AboutImg from "../../assets/about__img.jpg";
-import CV from "../../assets/abdelmoula-serghini-cv.pdf";
+import AboutImg from "../../assets/about-photo.jpg";
+import cv from "../../data/cv";
 import Info from "./Info";
 import "./about.css";
 import Button from "../../components/ui/Button";
@@ -8,7 +8,7 @@ import SectionHeading from "../../components/ui/SectionHeading";
 import { useLocale } from "../../app/LocaleContext";
 
 const About = () => {
-  const { t } = useLocale();
+  const { t, locale } = useLocale();
   return (
     <section className="about section" id="about">
       <SectionHeading title={t("about.title")} subtitle={t("about.subtitle")} />
@@ -20,7 +20,7 @@ const About = () => {
           <Info />
 
           <p className="about__description">{t("about.description")}</p>
-          <Button as="a" download="" href={CV}>
+          <Button as="a" href={cv[locale]} target="_blank" rel="noopener noreferrer">
             {t("about.downloadCv")}
             <svg
               className="button__icon"

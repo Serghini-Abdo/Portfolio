@@ -4,12 +4,34 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Abdelmoula Serghini" />
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" />
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
-    <title>Abdelmoula Serghini | Digital QA Specialist</title>
+    <script>
+      try {
+        var theme = localStorage.getItem("portfolio-theme");
+        if (theme !== "light" && theme !== "dark") {
+          theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.dataset.theme = theme;
+      } catch (error) {}
+    </script>
+    <!--seo-start--><!--seo-end-->
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <h1>Abdelmoula Serghini</h1>
+      <p>Digital QA Specialist in Fez, Morocco, building AI-assisted QA tools with Python, JavaScript and LLM agents. Enable JavaScript to view the full portfolio.</p>
+      <p>
+        <a href="https://www.linkedin.com/in/abdelmoula-serghini/">LinkedIn</a> ·
+        <a href="https://github.com/Serghini-Abdo">GitHub</a>
+      </p>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

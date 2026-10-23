@@ -2,7 +2,13 @@
 html.is-switching {
   --skeleton-bg: linear-gradient(90deg, rgb(128 128 128 / 14%) 25%, rgb(128 128 128 / 28%) 50%, rgb(128 128 128 / 14%) 75%) 0 0 / 200% 100%;
   --skeleton-radius: 0.75rem;
+  --skeleton-fill: rgb(128 128 128 / 22%);
   --skeleton-nav-height: 2rem;
+}
+
+html[data-theme="dark"].is-switching {
+  --skeleton-fill: rgb(255 255 255 / 12%);
+  --skeleton-bg: linear-gradient(90deg, rgb(255 255 255 / 7%) 25%, rgb(255 255 255 / 15%) 50%, rgb(255 255 255 / 7%) 75%) 0 0 / 200% 100%;
 }
 
 html.is-switching body {
@@ -26,14 +32,14 @@ html.is-switching :is(h1, h2, h3, p, span, a, button) :is(h1, h2, h3, p, span, a
 }
 
 /* Cards, section headings and form fields become one shape; everything inside is hidden. */
-html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading) {
+html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading, .home__scroll-button, .blog__card) {
   background: var(--skeleton-bg) !important;
   border-color: transparent !important;
   border-radius: var(--skeleton-radius) !important;
   animation: skeleton-shimmer 1.2s ease-in-out infinite;
 }
 
-html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading) * {
+html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading, .home__scroll-button, .blog__card) * {
   visibility: hidden;
 }
 
@@ -51,7 +57,7 @@ html.is-switching .home__img {
 }
 
 /* Header items share one height. */
-html.is-switching :is(.nav__logo, .nav__link) {
+html.is-switching :is(.nav__logo, .nav__link, .theme-toggle) {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,13 +113,17 @@ html.is-switching ::placeholder {
   color: transparent;
 }
 
-html.is-switching :is(svg, .nav__logo b) {
+html.is-switching :is(svg:not(.contact__mail), .nav__logo b) {
   opacity: 0;
 }
 
 html.is-switching img {
   filter: brightness(0);
   opacity: 0.1;
+}
+
+html[data-theme="dark"].is-switching img {
+  filter: brightness(0) invert(1);
 }
 
 @keyframes skeleton-shimmer {
@@ -125,4 +135,29 @@ html.is-switching img {
   html.is-switching * {
     animation: none !important;
   }
+}
+
+html.is-switching .theme-toggle {
+  width: var(--skeleton-nav-height);
+}
+
+/* The email animation turns into an envelope-shaped block. */
+.contact__mail-skeleton {
+  display: none;
+}
+
+/* visibility, not display, so the plane and trail keep running and stay in sync */
+html.is-switching .contact__mail > :not(.contact__mail-skeleton) {
+  visibility: hidden;
+}
+
+html.is-switching .contact__mail-skeleton {
+  display: block;
+  fill: var(--skeleton-fill);
+  animation: skeleton-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
 }

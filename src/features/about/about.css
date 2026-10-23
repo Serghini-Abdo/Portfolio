@@ -18,14 +18,14 @@
 
 .about__box {
     background-color: var(--container-color);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
     text-align: center;
     padding: 1rem 1.25rem;
 }
 
 .about__icon {
     font-size: 1.5rem;
-    color: var(--title-color);
+    color: var(--highlight);
     margin-bottom: var(--mb-0-5);
 }
 
@@ -36,6 +36,25 @@
 
 .about__subtitle {
     font-size: var(--tiny-font-size);
+}
+
+.about__link {
+    display: block;
+    margin: var(--mb-0-5) auto 0;
+    padding: 0;
+    background: none;
+    border: 0;
+    font: inherit;
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.about__link:hover {
+    color: var(--highlight-strong);
 }
 
 .about__description {

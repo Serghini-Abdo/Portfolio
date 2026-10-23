@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./contact.css";
+import MailAnimation from "./MailAnimation";
 import Button from "../../components/ui/Button";
 import SectionHeading from "../../components/ui/SectionHeading";
 import contactLinks from "../../data/contactLinks";
@@ -100,7 +101,7 @@ const Contact = () => {
             <textarea className={errors.message ? "contact__field-error" : ""} id="contact-message" name="message" rows="6" aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? "contact-message-error" : undefined} />
             {errors.message && <span className="contact__error" id="contact-message-error">{t(errors.message)}</span>}
           </div>
-          <Button type="submit">
+          <Button className="contact__submit" type="submit">
             {t("contact.send")} <i className="uil uil-message button__icon" aria-hidden="true"></i>
           </Button>
           {status && (
@@ -117,6 +118,8 @@ const Contact = () => {
             </div>
           )}
         </form>
+
+        <MailAnimation />
       </div>
     </section>
   );
