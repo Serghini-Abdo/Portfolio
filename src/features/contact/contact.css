@@ -52,6 +52,10 @@
   gap: 1.25rem;
 }
 
+.contact__submit {
+  justify-self: start;
+}
+
 .contact__honeypot {
   position: absolute;
   left: -9999px;

@@ -15,6 +15,7 @@
   --body-color: hsl(var(--hue), var(--sat), 98%);
   --container-color: #fff;
   --accent: #ffdd67;
+  --photo-ring: rgb(255 255 255 / 30%);
   --highlight: var(--title-color);
   --highlight-strong: var(--title-color-dark);
   --line-color: var(--text-color);
@@ -70,6 +71,7 @@ html[data-theme="dark"] {
   --text-color: hsl(0, 0%, 66%);
   --body-color: #121212;
   --container-color: #1c1c1c;
+  --photo-ring: rgb(255 221 103 / 45%);
   --highlight: #ffdd67;
   --highlight-strong: #ffdd67;
   --line-color: #ffdd67;
