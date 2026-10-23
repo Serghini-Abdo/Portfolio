@@ -38,6 +38,25 @@
     font-size: var(--tiny-font-size);
 }
 
+.about__link {
+    display: block;
+    margin: var(--mb-0-5) auto 0;
+    padding: 0;
+    background: none;
+    border: 0;
+    font: inherit;
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-medium);
+    color: var(--title-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+}
+
+.about__link:hover {
+    color: var(--highlight-strong);
+}
+
 .about__description {
     padding: 0 4rem 0 0;
     margin-bottom: var(--mb-2);

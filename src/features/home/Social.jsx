@@ -1,15 +1,18 @@
 import React from 'react'
+import Link from "../../app/Link";
+import { useLocale } from "../../app/LocaleContext";
 
 const Social = () => {
+  const { t } = useLocale();
   return (
     <div className="home__social">
-        <a href="https://www.linkedin.com/in/abdelmoula-serghini/" className="home__social-icon" target="_blank" rel="noreferrer">
+        <a href="https://www.linkedin.com/in/abdelmoula-serghini/" className="home__social-icon" aria-label="LinkedIn" target="_blank" rel="noreferrer">
             <i className="bx bxl-linkedin"></i>
         </a>
-        <a href="https://serghini-abdo.vercel.app/" className="home__social-icon" target="_blank" rel="noreferrer">
-            <i className="uil uil-dribbble"></i>
-        </a>
-        <a href="https://github.com/Serghini-Abdo/" className="home__social-icon" target="_blank" rel="noreferrer">
+        <Link to="/blog" className="home__social-icon" aria-label={t("blog.title")}>
+            <i className="uil uil-pen"></i>
+        </Link>
+        <a href="https://github.com/Serghini-Abdo/" className="home__social-icon" aria-label="GitHub" target="_blank" rel="noreferrer">
             <i className="uil uil-github-alt"></i>
         </a>
     </div>

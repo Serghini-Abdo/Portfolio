@@ -20,7 +20,7 @@ const About = () => {
           <Info />
 
           <p className="about__description">{t("about.description")}</p>
-          <Button as="a" download="" href={cv[locale]}>
+          <Button as="a" href={cv[locale]} target="_blank" rel="noopener noreferrer">
             {t("about.downloadCv")}
             <svg
               className="button__icon"

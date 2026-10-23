@@ -32,14 +32,14 @@ html.is-switching :is(h1, h2, h3, p, span, a, button) :is(h1, h2, h3, p, span, a
 }
 
 /* Cards, section headings and form fields become one shape; everything inside is hidden. */
-html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading, .home__scroll-button) {
+html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading, .home__scroll-button, .blog__card) {
   background: var(--skeleton-bg) !important;
   border-color: transparent !important;
   border-radius: var(--skeleton-radius) !important;
   animation: skeleton-shimmer 1.2s ease-in-out infinite;
 }
 
-html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading, .home__scroll-button) * {
+html.is-switching :is(.about__box, .skills__content, .services__content, .portfolio__card, .contact__card, .contact__form-group, .section__heading, .home__scroll-button, .blog__card) * {
   visibility: hidden;
 }
 
