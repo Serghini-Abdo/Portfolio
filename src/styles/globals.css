@@ -156,6 +156,17 @@ img {
   color: var(--title-color);
 }
 
+.section__title::before {
+  content: "";
+  display: inline-block;
+  width: 0.3em;
+  height: 0.3em;
+  margin-right: 0.3em;
+  border-radius: 50%;
+  background-color: var(--accent);
+  vertical-align: middle;
+}
+
 .section__subtitle {
   display: block;
   font-size: var(--small-font-size);

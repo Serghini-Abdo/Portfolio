@@ -56,22 +56,6 @@
     top: 1rem;
 }
 
-.home__actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1rem 1.5rem;
-}
-
-.home__blog-link {
-    color: var(--title-color);
-    font-weight: var(--font-medium);
-}
-
-.home__blog-link:hover {
-    color: var(--highlight-strong);
-}
-
 .home__description {
     max-width: 400px;
     margin-bottom: var(--mb-3);

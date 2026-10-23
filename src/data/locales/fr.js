@@ -8,7 +8,7 @@ const fr = {
   home: {
     subtitle: "Spécialiste QA digital | IA conversationnelle",
     description: "Je teste des produits digitaux et je crée des outils d'IA pour la QA avec Python, JavaScript et des agents LLM.",
-    reachOut: "Me contacter", readBlog: "Lire mon blog",
+    visitBlog: "Visiter mon blog",
   },
   about: {
     title: "À propos de moi", subtitle: "Mon introduction", education: "Formation",
