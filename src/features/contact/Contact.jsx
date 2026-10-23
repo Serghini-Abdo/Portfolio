@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./contact.css";
+import MailAnimation from "./MailAnimation";
 import Button from "../../components/ui/Button";
 import SectionHeading from "../../components/ui/SectionHeading";
 import contactLinks from "../../data/contactLinks";
@@ -117,6 +118,8 @@ const Contact = () => {
             </div>
           )}
         </form>
+
+        <MailAnimation />
       </div>
     </section>
   );

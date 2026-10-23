@@ -106,6 +106,7 @@
   top: calc(var(--header-height) + 1.5rem);
   left: 50%;
   z-index: 1000;
+  width: max-content;
   max-width: calc(100vw - 3rem);
   padding: 1rem 1.25rem;
   color: var(--solid-fg);
@@ -143,5 +144,95 @@
   .contact__container {
     grid-template-columns: 1fr;
     row-gap: 2rem;
+  }
+}
+
+/* Decorative "email being sent" animation under the contact cards. */
+.contact__mail-envelope rect {
+  fill: var(--container-color);
+  stroke: var(--title-color);
+  stroke-width: 3;
+}
+
+.contact__mail-envelope path {
+  fill: none;
+  stroke: var(--title-color);
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.contact__mail-envelope {
+  animation: contact-mail-bob 4s ease-in-out infinite;
+}
+
+.contact__mail-trail {
+  fill: none;
+  stroke: var(--text-color);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 0 100;
+}
+
+.contact__mail-plane polygon {
+  fill: var(--accent);
+  stroke: var(--title-color);
+  stroke-width: 2.5;
+  stroke-linejoin: round;
+}
+
+.contact__mail-plane path {
+  fill: none;
+  stroke: var(--title-color);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.contact__mail {
+  display: block;
+  width: 100%;
+  max-width: 280px;
+  justify-self: center;
+  overflow: visible;
+}
+
+/* Desktop: under the cards, beside the form. Tablet and mobile: below the form. */
+@media screen and (min-width: 1024px) {
+  .contact__container {
+    grid-template-rows: auto 1fr;
+  }
+
+  .contact__form {
+    grid-row: 1 / span 2;
+  }
+
+  .contact__mail {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+    justify-self: start;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .contact__mail {
+    grid-column: 1 / -1;
+  }
+}
+
+@keyframes contact-mail-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact__mail-envelope {
+    animation: none;
+  }
+
+  .contact__mail-trail {
+    stroke-dasharray: 100 0;
+    opacity: 0.5;
   }
 }

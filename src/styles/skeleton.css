@@ -2,10 +2,12 @@
 html.is-switching {
   --skeleton-bg: linear-gradient(90deg, rgb(128 128 128 / 14%) 25%, rgb(128 128 128 / 28%) 50%, rgb(128 128 128 / 14%) 75%) 0 0 / 200% 100%;
   --skeleton-radius: 0.75rem;
+  --skeleton-fill: rgb(128 128 128 / 22%);
   --skeleton-nav-height: 2rem;
 }
 
 html[data-theme="dark"].is-switching {
+  --skeleton-fill: rgb(255 255 255 / 12%);
   --skeleton-bg: linear-gradient(90deg, rgb(255 255 255 / 7%) 25%, rgb(255 255 255 / 15%) 50%, rgb(255 255 255 / 7%) 75%) 0 0 / 200% 100%;
 }
 
@@ -111,7 +113,7 @@ html.is-switching ::placeholder {
   color: transparent;
 }
 
-html.is-switching :is(svg, .nav__logo b) {
+html.is-switching :is(svg:not(.contact__mail), .nav__logo b) {
   opacity: 0;
 }
 
@@ -137,4 +139,25 @@ html[data-theme="dark"].is-switching img {
 
 html.is-switching .theme-toggle {
   width: var(--skeleton-nav-height);
+}
+
+/* The email animation turns into an envelope-shaped block. */
+.contact__mail-skeleton {
+  display: none;
+}
+
+/* visibility, not display, so the plane and trail keep running and stay in sync */
+html.is-switching .contact__mail > :not(.contact__mail-skeleton) {
+  visibility: hidden;
+}
+
+html.is-switching .contact__mail-skeleton {
+  display: block;
+  fill: var(--skeleton-fill);
+  animation: skeleton-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import AboutImg from "../../assets/about__img.jpg";
+import AboutImg from "../../assets/about-photo.jpg";
 import CV from "../../assets/abdelmoula-serghini-cv.pdf";
 import Info from "./Info";
 import "./about.css";
