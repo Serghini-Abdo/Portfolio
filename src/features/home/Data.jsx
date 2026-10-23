@@ -63,9 +63,8 @@ const Data = () => {
       <h3 className="home__subtitle">{t("home.subtitle")}</h3>
 
       <p className="home__description">{t("home.description")}</p>
-      <div className="home__actions">
-      <Button as="a" href="#contact">
-        {t("home.reachOut")}
+      <Button as={Link} to="/blog">
+        {t("home.visitBlog")}
         <svg
           className="button__icon"
           xmlns="http://www.w3.org/2000/svg"
@@ -84,10 +83,6 @@ const Data = () => {
           ></path>
         </svg>
       </Button>
-      <Link to="/blog" className="home__blog-link">
-        {t("home.readBlog")} <i className="uil uil-arrow-right"></i>
-      </Link>
-      </div>
     </div>
   );
 };

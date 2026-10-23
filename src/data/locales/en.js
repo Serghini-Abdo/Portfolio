@@ -8,7 +8,7 @@ const en = {
   home: {
     subtitle: "Digital QA Specialist | Conversational AI",
     description: "I test digital products and build AI-assisted tools for QA with Python, JavaScript and LLM agents.",
-    reachOut: "Reach out", readBlog: "Read my blog",
+    visitBlog: "Visit my blog",
   },
   about: {
     title: "About Me", subtitle: "My introduction", education: "Education",

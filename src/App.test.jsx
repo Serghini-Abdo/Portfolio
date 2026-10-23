@@ -99,7 +99,7 @@ test("links between the portfolio and the blog", () => {
   window.history.replaceState(null, "", "/en");
   render(<App />);
 
-  fireEvent.click(screen.getByRole("link", { name: /read my blog/i }));
+  fireEvent.click(screen.getByRole("link", { name: /visit my blog/i }));
   expect(window.location.pathname).toBe("/en/blog");
   expect(screen.getByRole("heading", { name: "Blog" })).toBeInTheDocument();
   expect(document.title).toBe("Blog | Abdelmoula Serghini");
