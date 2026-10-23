@@ -240,3 +240,10 @@
     opacity: 0.5;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .contact__submit {
+    justify-self: stretch;
+    justify-content: center;
+  }
+}

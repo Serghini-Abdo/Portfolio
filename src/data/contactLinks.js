@@ -3,7 +3,7 @@ const contactLinks = [
     icon: "uil uil-envelope",
     labelKey: "contact.email",
     valueKey: "contact.emailValue",
-    href: "#contact-form",
+    href: "mailto:abdelmoula.serghini1@gmail.com",
   },
   {
     icon: "uil uil-linkedin-alt",
